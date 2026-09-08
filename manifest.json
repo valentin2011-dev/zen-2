@@ -1,0 +1,11 @@
+{
+  "name":"ZEN — Valentin",
+  "short_name":"ZEN",
+  "description":"Dashboard personnel ZEN avec notes, projets, motivation et mode ZEN.",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#17151b",
+  "theme_color":"#17151b",
+  "orientation":"portrait",
+  "icons":[{"src":"assets/watch-classic.png","sizes":"512x279","type":"image/png","purpose":"any maskable"}]
+}
