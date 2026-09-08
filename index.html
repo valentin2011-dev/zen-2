@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17151b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ZEN">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/watch-classic.png">
+  <title>ZEN — Valentin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="splash" class="splash">
+      <div class="splash-loader" aria-label="Chargement"></div>
+      <div class="splash-z">Z</div>
+      <div class="sparkles" id="sparkles"></div>
+    </section>
+
+    <main id="mainApp" class="app-shell hidden" aria-label="ZEN">
+      <div id="backgroundLayer" class="background-layer"></div>
+      <div class="ambient"></div>
+      <div id="toast" class="toast"></div>
+
+      <section id="screen-home" class="screen active">
+        <div class="home-content">
+          <div class="live-clock" id="homeClock"></div>
+          <img class="watch watch-home" src="assets/watch-classic.png" alt="Montre classique">
+          <div class="hello">bonjour valentin</div>
+          <div class="quote" id="homeQuote">“easy choices now make harder life, harder choices now makes easy life”</div>
+          <div class="home-shortcuts">
+            <button class="shortcut" data-go="notes"><span class="shortcut-icon">✎</span></button>
+            <button class="shortcut" data-go="projects"><span class="shortcut-icon">▤</span></button>
+            <button class="shortcut" data-go="motivation"><span class="shortcut-icon">✦</span></button>
+          </div>
+        </div>
+        <nav class="bottom-bar home-bar">
+          <button class="nav-zone zen-trigger" title="Mode ZEN"><span class="zen-icon">Z</span></button>
+          <button class="nav-zone home-trigger active" title="Accueil"><span class="home-icon">⌂</span></button>
+          <button class="nav-zone settings-trigger" title="Réglages"><span class="settings-icon">⚙</span></button>
+        </nav>
+      </section>
+
+      <section id="screen-notes" class="screen">
+        <div class="page-content">
+          <header class="page-head">
+            <img class="watch mini-watch" src="assets/watch-chrono.png" alt="">
+            <div class="page-title-block">
+              <div class="hello">bonjour valentin</div>
+              <div class="section-label"><span id="notesLabel">note idée</span><button class="edit-title" data-title="notes">✎</button></div>
+            </div>
+          </header>
+          <div class="digital-clock" id="notesClock"></div>
+          <div class="notes-panel">
+            <button class="pill-nav" data-filter="important">idée importante</button>
+            <button class="pill-nav" data-filter="all">toutes les notes</button>
+            <div id="notesList" class="notes-list"></div>
+            <button class="add-wide" id="addNoteBtn"><span>＋</span> nouvelle note</button>
+          </div>
+        </div>
+        <nav class="bottom-bar compact">
+          <button class="nav-zone zen-trigger"><span class="zen-icon">Z</span></button>
+          <button class="nav-zone home-trigger"><span class="home-icon">⌂</span></button>
+          <button class="nav-zone settings-trigger"><span class="settings-icon">⚙</span></button>
+        </nav>
+      </section>
+
+      <section id="screen-projects" class="screen">
+        <div class="page-content">
+          <header class="page-head">
+            <img class="watch mini-watch skeleton" src="assets/watch-skeleton.png" alt="">
+            <div class="page-title-block">
+              <div class="hello">bonjour valentin</div>
+              <div class="section-label"><span id="projectsLabel">projet</span><button class="edit-title" data-title="projects">✎</button></div>
+            </div>
+          </header>
+          <div class="digital-clock" id="projectsClock"></div>
+          <div class="projects-panel">
+            <div id="projectsList" class="projects-list"></div>
+            <button class="add-circle" id="addProjectBtn">＋</button>
+          </div>
+        </div>
+        <nav class="bottom-bar compact">
+          <button class="nav-zone zen-trigger"><span class="zen-icon">Z</span></button>
+          <button class="nav-zone home-trigger"><span class="home-icon">⌂</span></button>
+          <button class="nav-zone settings-trigger"><span class="settings-icon">⚙</span></button>
+        </nav>
+      </section>
+
+      <section id="screen-motivation" class="screen">
+        <div class="page-content motivation-content">
+          <header class="page-head">
+            <img class="watch mini-watch" src="assets/watch-classic.png" alt="">
+            <div class="page-title-block">
+              <div class="hello">bonjour valentin</div>
+              <div class="section-label"><span id="motivationLabel">motivation</span><button class="edit-title" data-title="motivation">✎</button></div>
+            </div>
+          </header>
+          <div class="digital-clock" id="motivationClock"></div>
+          <h1 class="millionaire">MILLIONAIRE</h1>
+          <div class="motivation-quote" id="motivationQuote">“easy choices now make harder life, harder choices now makes easy life”</div>
+          <div class="quotes-panel">
+            <div id="quotesList" class="quotes-list"></div>
+            <button class="add-circle" id="addQuoteBtn">＋</button>
+          </div>
+        </div>
+        <nav class="bottom-bar compact">
+          <button class="nav-zone zen-trigger"><span class="zen-icon">Z</span></button>
+          <button class="nav-zone home-trigger"><span class="home-icon">⌂</span></button>
+          <button class="nav-zone settings-trigger"><span class="settings-icon">⚙</span></button>
+        </nav>
+      </section>
+
+      <section id="screen-settings" class="screen">
+        <div class="settings-page">
+          <div class="settings-title">réglages</div>
+          <div class="settings-group">
+            <label>thème
+              <select id="themeSelect"><option value="dark">sombre</option><option value="light">claire</option></select>
+            </label>
+            <label>langue
+              <select id="languageSelect"><option value="fr">français</option><option value="en">english</option></select>
+            </label>
+            <label>fond d’écran
+              <div class="bg-actions">
+                <button id="useDefaultBg">fond ZEN</button>
+                <label class="file-btn">choisir une photo<input id="bgInput" type="file" accept="image/*"></label>
+              </div>
+            </label>
+            <button id="resetData" class="danger">réinitialiser les données</button>
+          </div>
+        </div>
+        <nav class="bottom-bar compact">
+          <button class="nav-zone zen-trigger"><span class="zen-icon">Z</span></button>
+          <button class="nav-zone home-trigger"><span class="home-icon">⌂</span></button>
+          <button class="nav-zone settings-trigger active"><span class="settings-icon">⚙</span></button>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <section id="zenScreen" class="zen-screen hidden">
+    <div class="zen-bg"></div>
+    <div class="zen-time" id="zenTime"></div>
+    <img class="zen-watch" src="assets/watch-classic.png" alt="">
+    <button class="zen-exit" id="zenExit">×</button>
+  </section>
+
+<script src="app.js?v=11"></script>
+</body>
+</html>
